@@ -7,7 +7,7 @@ using namespace std;
 
 //******************** CLASSES ************************
 
-class Hours;
+class Shift;
 class Supervisor;
 
 //Base class
@@ -15,8 +15,7 @@ class User {
 private:
     string name;
     unsigned int id;
-    vector<Hours*> userhours;
- //   Hours* userhours;
+    vector<Shift*> userhours;
     friend Supervisor;
 public:
     User();
@@ -26,37 +25,32 @@ public:
     void viewhours() const;
 };
 
-
  //Derived class
 class Supervisor : public User {
-private:
-    string position;
 public:
-    Supervisor(unsigned int num, string a, string pos) : User(num, a), position(pos) {userhours[0];};
-    Supervisor() : User(111111, "N/A"), position("N/A") {userhours[0];};
-    //Supervisor(unsigned int num, string a, string pos);
-    virtual void viewhours();
-    void viewhours (User n);
+    Supervisor(unsigned int num, string a) : User(num, a) {userhours[0];};
+    Supervisor() : User(111111, "N/A") {userhours[0];};
+    void viewemployeehours(User*);
 };
 
-//Hours class
-class Hours {
+//Shift class
+class Shift {
 private:
     time_t start;
     time_t end;
+    double total;
 public:
-    double sum;
+    double sumitup();
     
 };
 
 
-//**************** FUNCTIONS ********************
-
+//******************** FUNCTIONS ************************
 
 User::User(){
     name = "N/A";
     id = 111111;
-    
+    userhours[0];
 }
 
 User::User(unsigned int num, string a){
