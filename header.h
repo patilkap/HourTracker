@@ -59,3 +59,16 @@ User::User(unsigned int num, string a){
     userhours[0];
 }
 
+void User::clockin(){
+    new Shift a;
+    hoursworked.pushback(a);
+    a.start = time;
+    return;
+}
+
+void User::clockout(){
+    Shift* a = hoursworked.back();
+    a.end = time;
+    return;
+}
+
