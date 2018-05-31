@@ -88,5 +88,8 @@ void User::viewhours() const{
 }
 
 double Shift::sumitup() {
-	return difftime(start, end);
+double seconds, minutes;
+seconds = end - start;
+minutes = seconds/60;
+    return minutes/60;
 }
