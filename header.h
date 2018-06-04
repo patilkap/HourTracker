@@ -59,7 +59,8 @@ public:
 
 	Supervisor() : User(111111, "N/A") { userhours[0]; };
 	void addemp(User*);
-	void viewemployeehours(User*);
+	User* findemployee(unsigned int b);
+	void viewemployeehours(unsigned int a);
 
 };
 
@@ -165,6 +166,23 @@ void User::viewhours() const {
 void Supervisor::addemp(User* u) {
 	employees.push_back(u);
 }
+
+User* Supervisor::findemployee(unsigned int b) {
+	User* t;
+	for (auto x : employees) {
+		if (x->id == b) {
+			t = x;
+		}
+		else { return NULL; }
+	}
+	return t;
+}
+
+void Supervisor::viewemployeehours(unsigned int a) {
+	User* emp = findemployee(a);
+	emp->viewhours();
+}
+
 
 double Shift::sumitup() {
 
