@@ -57,7 +57,6 @@ User::User() {
 User::User(unsigned int num, string a) {
 	id = num;
 	name = a;
-	userhours[0];
 }
 
 void User::clockin() {
