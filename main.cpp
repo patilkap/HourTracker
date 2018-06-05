@@ -22,6 +22,7 @@ int main() {
 				cin >> nam;
 				sup.addemp(new User(id, nam));
 			}
+			else { cout << "That ID# is already taken. Please try again with a different ID#." << endl; }
 		}
 		else {
 			//SIGN IN (RUN FIND EMPLOYEE)
