@@ -10,10 +10,10 @@ int main() {
 		cout << "done creating...";
 		cout << "Enter 0 to sign up. Press any other key to sign in" << endl;
 		int q;
+		unsigned int id;
 		cin >> q;
 		if (q == 0) {
 			//ADD EMPLOYEE
-			unsigned int id;
 			cout << "Enter new ID#...";
 			cin >> id;
 			if (sup.findemployee(id) == NULL) {
@@ -26,7 +26,6 @@ int main() {
 		}
 		else {
 			//SIGN IN (RUN FIND EMPLOYEE)
-			unsigned int id;
 			User* loggedin;
 			cout << "Please enter your ID#...";
 			cin >> id;
