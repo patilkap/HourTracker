@@ -47,6 +47,9 @@ public:
 
 	void viewhours() const;
 
+	string getname() { return name; }
+	
+
 };
 
 //Derived class
